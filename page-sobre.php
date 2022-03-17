@@ -13,9 +13,11 @@
 			</div>
 
 			<div class="grid-8">
+
+			<?php if(have_rows('conteudo_sobre')): while(have_rows("conteudo_sobre")) : the_row(); ?>
 				<h2><?php the_field('titulo_historia') ?></h2>
 				<?php the_field('texto_da_historia') ?>
-		
+			<?php endwhile; else : endif; ?>
 				<h2><?php the_field('titulo_visao') ?></h2>
 				<?php the_field('texto_da_visao') ?>
 				

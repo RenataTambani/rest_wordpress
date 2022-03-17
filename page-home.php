@@ -8,58 +8,69 @@
 			<h2 class="subtitulo">Menu da Semana</h2>
 
 			<div class="menu-item grid-8">
-				<h2>Peixes</h2>
+			<h2><?php the_field('item01') ?></h2>
+				
 				<ul>
 					<li>
-						<span><sup>R$</sup>129</span>
+						<span><sup>R$</sup><?php the_field('item01_prato01_preco') ?></span>
 						<div>
-							<h3>Salmão Grelhado no Forno</h3>
-							<p>Pequenas tiras de salmão feitas no alho e óleo</p>
+							<h3><?php the_field('item01_prato01_titulo') ?></h3>
+							<p><?php the_field('item01_prato01_texto') ?></p>
 						</div>
 					</li>
+
 					<li>
-						<span><sup>R$</sup>89</span>
+						<span><sup>R$</sup><?php the_field('item01_prato02_preco') ?></span>
 						<div>
-							<h3>Sardinha Frita na Cerveja</h3>
-							<p>Sardinhas escolhidas a dedo e fritas em cerveja premium</p>
+							<h3><?php the_field('item01_prato02_titulo') ?></h3>
+							<p><?php the_field('item01_prato02_texto') ?></p>
 						</div>
 					</li>
+
 					<li>
-						<span><sup>R$</sup>159</span>
+						<span><sup>R$</sup><?php the_field('item01_prato03_preco') ?></span>
 						<div>
-							<h3>Camarão com Catupiry</h3>
-							<p>Grandes camarões grelhados, servidos ao molho de camarão com catupiry</p>
+							<h3><?php the_field('item01_prato03_titulo') ?></h3>
+							<p><?php the_field('item01_prato03_texto') ?></p>
 						</div>
 					</li>
+
+
 				</ul>
 			</div>
 
 			<div class="menu-item grid-8">
-				<h2>Carnes</h2>
+			<h2><?php the_field('item02') ?></h2>
+				
 				<ul>
 					<li>
-						<span><sup>R$</sup>129</span>
+						<span><sup>R$</sup><?php the_field('item02_prato01_preco') ?></span>
 						<div>
-							<h3>Picanha Nobre no Alho</h3>
-							<p>Pequenas tiras de salmão feitas no alho e óleo</p>
+							<h3><?php the_field('item02_prato01_titulo') ?></h3>
+							<p><?php the_field('item02_prato01_texto') ?></p>
 						</div>
 					</li>
+
 					<li>
-						<span><sup>R$</sup>89</span>
+						<span><sup>R$</sup><?php the_field('item02_prato02_preco') ?></span>
 						<div>
-							<h3>Cupim no Bafo</h3>
-							<p>Sardinhas escolhidas a dedo e fritas em cerveja premium</p>
+							<h3><?php the_field('item02_prato02_titulo') ?></h3>
+							<p><?php the_field('item02_prato02_texto') ?></p>
 						</div>
 					</li>
+
 					<li>
-						<span><sup>R$</sup>159</span>
+						<span><sup>R$</sup><?php the_field('item02_prato03_preco') ?></span>
 						<div>
-							<h3>Hamburger Artesanal Rest</h3>
-							<p>Grandes camarões grelhados, servidos ao molho de camarão com catupiry</p>
+							<h3><?php the_field('item02_prato03_titulo') ?></h3>
+							<p><?php the_field('item02_prato03_texto') ?></p>
 						</div>
 					</li>
+
+
 				</ul>
 			</div>
+
 		</section>
 
 		<?php endwhile; else: ?>
