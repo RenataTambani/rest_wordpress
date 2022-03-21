@@ -1,10 +1,10 @@
 <?php
 //Template name: Menu da semana
- ?>
+	?>
 
 <?php get_header(); ?> 
 <?php if ( have_posts() ) : while (have_posts() ) : the_post(); ?>
-		<section class="container">
+	 <section class="container"> 
 			<h2 class="subtitulo">Menu da Semana</h2>
 
 			<div class="menu-item grid-8">
