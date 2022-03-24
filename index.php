@@ -1,15 +1,21 @@
+<?php get_header(); ?>
+	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-<?php get_header(); ?> 
-<?php if ( have_posts() ) : while (have_posts() ) : the_post(); ?>
-		<h1><?php the_title(); ?>	</h1>
-		<?php the_content(); ?>
+		<section class="container sobre">
+			<h2 class="subtitulo"><?php the_title(); ?></h2>
 
-<?php endwhile; else: ?>
-	<section class="container sobre">
-		<div class="grid-8">
-			<p><?php _e("Essa página não existe."); ?></p>
-		</div>
-	<section>
-<?php endif; ?>
+			<div class="grid-8">
+				<?php the_content(); ?>
+			</div>
+		</section>
+
+	<?php endwhile; else: ?>
+		<section class="container sobre">
+			<div class="grid-8">
+				<p>Essa página não exite</p>
+			</div>
+		</section>
+	<?php endif; ?>
+
 
 <?php get_footer(); ?>

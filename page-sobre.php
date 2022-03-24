@@ -1,36 +1,31 @@
 <?php
-//Template name: Sobre
- ?>
+// Template Name: Sobre
+?>
+<?php get_header(); ?>
 
-<?php get_header(); ?> 
-<?php if ( have_posts() ) : while (have_posts() ) : the_post(); ?>
-
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<section class="container sobre">
-			<h2 class="subtitulo">Sobre</h2>
+			<h2 class="subtitulo"><?php the_title(); ?></h2>
 
 			<div class="grid-8">
-				<img src="<?php the_field('foto_rest_fachada'); ?>" alt="<?php the_field('foto_rest_descricao'); ?>" >
+				<?php
+					$imagem = wp_get_attachment_image_src(get_field2('foto_rest_id'), 'medium')[0];
+				?>
+
+				<img src="<?php the_field2('foto_rest'); ?>" alt="Fachada do Rest">
+				<img src="<?php echo $imagem; ?>" alt="Fachada do Rest">
+
 			</div>
 
 			<div class="grid-8">
-
-			<?php if(have_rows('conteudo_sobre')): while(have_rows("conteudo_sobre")) : the_row(); ?>
-				<h2><?php the_field('titulo_historia') ?></h2>
-				<?php the_field('texto_da_historia') ?>
-			<?php endwhile; else : endif; ?>
-				<h2><?php the_field('titulo_visao') ?></h2>
-				<?php the_field('texto_da_visao') ?>
-				
-				<h2><?php the_field('titulo_valores') ?></h2>
-				<?php the_field('texto_dos_valores') ?>
-				
+				<h2>História</h2>
+				<p><?php echo get_post_meta(get_the_ID(), 'historia', true); ?></p>
+				<p>Gostaria de enfatizar que o desenvolvimento contínuo de distintas formas de atuação prepara-nos para enfrentar situações atípicas decorrentes do remanejamento dos quadros funcionais.</p>
+				<h2>Visão</h2>
+				<p><?php echo get_post_meta(get_the_ID(), 'visao', true); ?></p>
+				<h2>Valores</h2>
+				<p>O empenho em analisar a consolidação das estruturas apresenta tendências no sentido de aprovar a manutenção dos índices pretendidos.</p>
 			</div>
 		</section>
-		<?php endwhile; else: ?>
-	<section class="container sobre">
-		<div class="grid-8">
-			<p><?php _e("Essa página não existe."); ?></p>
-		</div>
-	<section>
-<?php endif; ?>
-		<?php get_footer(); ?>
+<?php endwhile; else: endif; ?>
+<?php get_footer(); ?>
